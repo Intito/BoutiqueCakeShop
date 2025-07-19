@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen Ilustrativa</th>
+            <th>Producto</th>
+            <th>Ingredientes</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img [src]="brownie.image" [alt]="brownie.name" width="200"></td>
+            <td>{{brownie.name}}</td>
+            <td>{{brownie.ingredients}}</td>
+            <td>{{brownie.price}}</td>
+            <td>{{brownie.stock}}</td>
+        </tr>
+        <tr>
+            <td>Vigilante</td>
+            <td>Harina, Azucar</td>
+            <td>2000 c/u</td>
+            <td>127</td>
+        </tr>
+        <tr>
+            <td>Churro</td>
+            <td>Azucar</td>
+            <td>1900 c/u</td>
+            <td>88</td>
+        </tr>
+    </tbody>
+</table>
