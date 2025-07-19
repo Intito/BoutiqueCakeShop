@@ -9,24 +9,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img [src]="brownie.image" [alt]="brownie.name" width="200"></td>
-            <td>{{brownie.name}}</td>
-            <td>{{brownie.ingredients}}</td>
-            <td>{{brownie.price}}</td>
-            <td>{{brownie.stock}}</td>
-        </tr>
-        <tr>
-            <td>Vigilante</td>
-            <td>Harina, Azucar</td>
-            <td>2000 c/u</td>
-            <td>127</td>
-        </tr>
-        <tr>
-            <td>Churro</td>
-            <td>Azucar</td>
-            <td>1900 c/u</td>
-            <td>88</td>
-        </tr>
+        @for (factura of facturas; track factura.name){
+            <tr>
+                <td><img [src]="factura.image" [alt]="factura.name" width="200"></td>
+                <td>{{factura.name | uppercase}}</td>
+                <td>{{factura.ingredients}}</td>
+                <td>{{factura.price | currency}}</td>
+                @if (factura.stock > 0) {
+                    <td>{{factura.stock}}</td>
+                } @else {
+                    <td> <span class="badge bg-danger text-dark">SIN STOCK</span> </td>
+                }
+            </tr>
+        } @empty {
+            <tr>
+                <td colspan="4">No hay facturas disponibles.</td>
+            </tr>
+        }
     </tbody>
 </table>
